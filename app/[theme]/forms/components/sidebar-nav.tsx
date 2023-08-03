@@ -25,21 +25,25 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
       )}
       {...props}
     >
-      {items.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          className={cn(
-            buttonVariants({ variant: "ghost" }),
-            pathname === item.href
-              ? "bg-muted hover:bg-muted"
-              : "hover:bg-transparent hover:underline",
-            "justify-start"
-          )}
-        >
-          {item.title}
-        </Link>
-      ))}
+      {items.map((item) => {
+        console.log(pathname, pathname === item.href, item.href)
+
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={cn(
+              buttonVariants({ variant: "ghost" }),
+              pathname === item.href
+                ? "bg-muted hover:bg-muted hover:text-foreground"
+                : "hover:bg-transparent hover:text-accent hover:underline",
+              "justify-start"
+            )}
+          >
+            {item.title}
+          </Link>
+        )
+      })}
     </nav>
   )
 }

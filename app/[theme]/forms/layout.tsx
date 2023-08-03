@@ -11,34 +11,40 @@ export const metadata: Metadata = {
   description: "Advanced form example using react-hook-form and Zod.",
 }
 
-const sidebarNavItems = [
-  {
-    title: "Profile",
-    href: "/examples/forms",
-  },
-  {
-    title: "Account",
-    href: "/examples/forms/account",
-  },
-  {
-    title: "Appearance",
-    href: "/examples/forms/appearance",
-  },
-  {
-    title: "Notifications",
-    href: "/examples/forms/notifications",
-  },
-  {
-    title: "Display",
-    href: "/examples/forms/display",
-  },
-]
-
 interface SettingsLayoutProps {
   children: React.ReactNode
+  params: {
+    theme: string
+  }
 }
 
-export default function SettingsLayout({ children }: SettingsLayoutProps) {
+export default function SettingsLayout({
+  children,
+  params: { theme },
+}: SettingsLayoutProps) {
+  const sidebarNavItems = [
+    {
+      title: "Profile",
+      href: `/${theme}/forms`,
+    },
+    {
+      title: "Account",
+      href: `/${theme}/forms/account`,
+    },
+    {
+      title: "Appearance",
+      href: `/${theme}/forms/appearance`,
+    },
+    {
+      title: "Notifications",
+      href: `/${theme}/forms/notifications`,
+    },
+    {
+      title: "Display",
+      href: `/${theme}/forms/display`,
+    },
+  ]
+
   return (
     <>
       <div className="md:hidden">
