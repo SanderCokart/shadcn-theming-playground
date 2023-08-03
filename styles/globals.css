@@ -3,6 +3,7 @@
 @import 'themes/nature.css';
 @import 'themes/netflix.css';
 @import 'themes/laracon.css';
+@import 'themes/innosend.css';
 
 @tailwind base;
 @tailwind components;

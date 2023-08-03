@@ -1,11 +1,14 @@
-"use client";
+"use client"
 
-import { useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
-import themes from "@/themes/index.json";
-import { sanitizeName } from "@/lib/utils";
-import { ShadcnTheme, useTheme } from "@/components/shadcn-theme-provider";
+import { useEffect } from "react"
+import { usePathname, useRouter } from "next/navigation"
+import themes from "@/themes/index.json"
 
+import type { ShadcnTheme } from "@/components/shadcn-theme-provider"
+
+import { sanitizeName } from "@/lib/utils"
+
+import { useTheme } from "@/components/shadcn-theme-provider"
 
 const themesNames = themes.map((t) => sanitizeName(t.name))
 
@@ -18,9 +21,8 @@ const useSetTheme = (theme: string) => {
 
   const currentPage = nested ? `/${nested.join("/")}` : ""
 
-  
   if (typeof window !== "undefined" && !themesNames.includes(theme)) {
-      router.replace(`/${sanitizeName(themes[0].name)}/${currentPage}`)
+    router.replace(`/${sanitizeName(themes[0].name)}/${currentPage}`)
   }
 
   const currentTheme =

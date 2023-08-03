@@ -1,5 +1,7 @@
-import { Metadata } from "next"
+import Image from "next/image"
 import { History } from "lucide-react"
+
+import type { Metadata } from "next"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -24,7 +26,6 @@ import { TemperatureSelector } from "./components/temperature-selector"
 import { TopPSelector } from "./components/top-p-selector"
 import { models, types } from "./data/models"
 import { presets } from "./data/presets"
-import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "Playground",

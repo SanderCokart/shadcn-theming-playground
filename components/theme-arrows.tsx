@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import { useSetTheme } from "@/hooks/use-set-theme"
+
 import { useTheme } from "@/components/shadcn-theme-provider"
 
 export function ThemeArrows({

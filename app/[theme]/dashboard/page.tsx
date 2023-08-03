@@ -1,6 +1,7 @@
-import { Metadata } from "next"
 import Image from "next/image"
 import { Activity, CreditCard, DollarSign, Download, Users } from "lucide-react"
+
+import type { Metadata } from "next"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -11,6 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
 import { CalendarDateRangePicker } from "./components/date-range-picker"
 import { MainNav } from "./components/main-nav"
 import { Overview } from "./components/overview"

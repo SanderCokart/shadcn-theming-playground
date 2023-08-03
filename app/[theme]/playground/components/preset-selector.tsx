@@ -2,10 +2,13 @@
 
 import * as React from "react"
 import { useRouter } from "next/navigation"
-import { PopoverProps } from "@radix-ui/react-popover"
 import { Check, ChevronsUpDown } from "lucide-react"
 
+import type { Preset } from "../data/presets"
+import type { PopoverProps } from "@radix-ui/react-popover"
+
 import { cn } from "@/lib/utils"
+
 import { Button } from "@/components/ui/button"
 import {
   Command,
@@ -19,8 +22,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-
-import { Preset } from "../data/presets"
 
 interface PresetSelectorProps extends PopoverProps {
   presets: Preset[]

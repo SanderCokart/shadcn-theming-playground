@@ -5,10 +5,14 @@ import { ChevronDown } from "lucide-react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
+import type { ChangeEvent } from "react"
+
 import { cn } from "@/lib/utils"
+
 import { Button, buttonVariants } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { toast } from "@/components/ui/use-toast"
+
 import {
   Form,
   FormControl,
@@ -18,7 +22,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/react-hook-form/form"
-import { ChangeEvent } from "react"
 
 const appearanceFormSchema = z.object({
   theme: z.enum(["light", "dark"], {
@@ -97,7 +100,9 @@ export function AppearanceForm() {
               </FormDescription>
               <FormMessage />
               <RadioGroup
-                onValueChange={(e)=>field.onChange(e as "light" | "dark" | ChangeEvent<Element>)}
+                onValueChange={(e) =>
+                  field.onChange(e as "light" | "dark" | ChangeEvent<Element>)
+                }
                 defaultValue={field.value}
                 className="grid max-w-md grid-cols-2 gap-8 pt-2"
               >

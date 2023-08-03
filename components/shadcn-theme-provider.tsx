@@ -1,9 +1,11 @@
 "use client"
 
 import * as React from "react"
-import { ReactNode, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import themes from "@/themes/index.json"
+
+import type { ReactNode } from "react"
 
 import { sanitizeName } from "@/lib/utils"
 

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { ArrowRight } from "lucide-react"
 
 import { cn, sanitizeName } from "@/lib/utils"
+
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 
 import { useTheme } from "./shadcn-theme-provider"

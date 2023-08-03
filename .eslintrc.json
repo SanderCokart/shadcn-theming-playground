@@ -6,11 +6,20 @@
     "prettier",
     "plugin:tailwindcss/recommended"
   ],
-  "plugins": ["tailwindcss"],
+  "plugins": ["tailwindcss", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
   "rules": {
     "@next/next/no-html-link-for-pages": "off",
     "react/jsx-key": "off",
-    "tailwindcss/no-custom-classname": "off"
+    "tailwindcss/no-custom-classname": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "disallowTypeAnnotations": true,
+        "fixStyle": "separate-type-imports"
+      }
+    ]
   },
   "settings": {
     "tailwindcss": {

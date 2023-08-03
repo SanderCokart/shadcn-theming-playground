@@ -1,11 +1,14 @@
 "use client"
 
 import * as React from "react"
-import { PopoverProps } from "@radix-ui/react-popover"
 import { Check, ChevronsUpDown } from "lucide-react"
+
+import type { Model, ModelType } from "../data/models"
+import type { PopoverProps } from "@radix-ui/react-popover"
 
 import { cn } from "@/lib/utils"
 import { useMutationObserver } from "@/hooks/use-mutation-observer"
+
 import { Button } from "@/components/ui/button"
 import {
   Command,
@@ -26,8 +29,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-
-import { Model, ModelType } from "../data/models"
 
 interface ModelSelectorProps extends PopoverProps {
   types: readonly ModelType[]

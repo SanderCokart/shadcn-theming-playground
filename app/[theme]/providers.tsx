@@ -1,24 +1,26 @@
 // app/providers.js
-'use client'
+"use client"
 
-import posthog from 'posthog-js'
-import { PostHogProvider } from 'posthog-js/react'
-import { usePathname, useSearchParams } from "next/navigation";
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react"
+import { usePathname, useSearchParams } from "next/navigation"
+import posthog from "posthog-js"
+import { PostHogProvider } from "posthog-js/react"
 
-if (typeof window !== 'undefined' && 
-    !!process.env.NEXT_PUBLIC_POSTHOG_KEY && 
-    !!process.env.NEXT_PUBLIC_POSTHOG_HOST) {
+import type { ReactNode } from "react"
 
+if (
+  typeof window !== "undefined" &&
+  !!process.env.NEXT_PUBLIC_POSTHOG_KEY &&
+  !!process.env.NEXT_PUBLIC_POSTHOG_HOST
+) {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
-    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST
+    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
   })
 }
 
-export default function PHProvider({ children }:{children: ReactNode}) {
-
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+export default function PHProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
   // Track pageviews
   useEffect(() => {
     if (pathname) {
@@ -26,12 +28,9 @@ export default function PHProvider({ children }:{children: ReactNode}) {
       if (searchParams.toString()) {
         url = url + `?${searchParams.toString()}`
       }
-      posthog.capture(
-        '$pageview',
-        {
-          '$current_url': url,
-        }
-      )
+      posthog.capture("$pageview", {
+        $current_url: url,
+      })
     }
   }, [pathname, searchParams])
 

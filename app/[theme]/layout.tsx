@@ -7,7 +7,9 @@ import themes from "@/themes/index.json"
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn, sanitizeName } from "@/lib/utils"
+
 import { Toaster } from "@/components/ui/toaster"
+
 import { ExamplesNav } from "@/components/examples-nav"
 import Footer from "@/components/footer"
 import PageHeader from "@/components/home/pageHeader"

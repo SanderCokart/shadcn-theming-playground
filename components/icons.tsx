@@ -13,7 +13,6 @@ import {
   Image,
   Laptop,
   Loader2,
-  LucideProps,
   Moon,
   MoreVertical,
   Pizza,
@@ -24,8 +23,10 @@ import {
   Twitter,
   User,
   X,
-  type Icon as LucideIcon,
 } from "lucide-react"
+
+import type { LucideProps } from "lucide-react"
+import type { Icon as LucideIcon } from "lucide-react"
 
 export type Icon = LucideIcon
 

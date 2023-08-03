@@ -5,11 +5,14 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
+import type { ChangeEvent } from "react"
+
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Switch } from "@/components/ui/switch"
 import { toast } from "@/components/ui/use-toast"
+
 import {
   Form,
   FormControl,
@@ -19,7 +22,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/react-hook-form/form"
-import { ChangeEvent } from "react"
 
 const notificationsFormSchema = z.object({
   type: z.enum(["all", "mentions", "none"], {
@@ -70,7 +72,11 @@ export function NotificationsForm() {
               <FormLabel>Notify me about...</FormLabel>
               <FormControl>
                 <RadioGroup
-                  onValueChange={(e)=>field.onChange(e as "all" | "mentions" | "none" | ChangeEvent<Element>)}
+                  onValueChange={(e) =>
+                    field.onChange(
+                      e as "all" | "mentions" | "none" | ChangeEvent<Element>
+                    )
+                  }
                   defaultValue={field.value}
                   className="flex flex-col space-y-1"
                 >
@@ -201,7 +207,11 @@ export function NotificationsForm() {
               <FormControl>
                 <Checkbox
                   checked={field.value}
-                  onCheckedChange={(e)=>field.onChange(e as boolean | ChangeEvent<Element> | undefined)}
+                  onCheckedChange={(e) =>
+                    field.onChange(
+                      e as boolean | ChangeEvent<Element> | undefined
+                    )
+                  }
                 />
               </FormControl>
               <div className="space-y-1 leading-none">

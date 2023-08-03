@@ -40,5 +40,12 @@
     "version": "1",
     "name": "Laracon",
     "description": "A vibrant color palette celebrating Laracon US 2023."
+  },
+  {
+    "author": "Sander Cokart",
+    "authorUsername": "sandercokart",
+    "version": "1",
+    "name": "Innosend",
+    "description": "Innosend company colors"
   }
 ]

@@ -1,13 +1,15 @@
 "use client"
 
 import * as React from "react"
+import { Loader2 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+
 import { Icons } from "@/components/icons"
-import { Loader2 } from "lucide-react"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -42,9 +44,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             />
           </div>
           <Button disabled={isLoading}>
-            {isLoading && (
-              <Loader2 className="mr-2 h-4 w-4 animate-spin"/>
-            )}
+            {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             Sign In with Email
           </Button>
         </div>
@@ -61,7 +61,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
       </div>
       <Button variant="outline" type="button" disabled={isLoading}>
         {isLoading ? (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin"/>
+          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
         ) : (
           <Icons.gitHub className="mr-2 h-4 w-4" />
         )}{" "}

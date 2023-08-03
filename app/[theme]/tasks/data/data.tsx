@@ -1,7 +1,7 @@
 import {
-  ArrowUpCircle,
   ArrowDownCircle,
   ArrowRightCircle,
+  ArrowUpCircle,
   CheckCircle2,
   Circle,
   HelpCircle,

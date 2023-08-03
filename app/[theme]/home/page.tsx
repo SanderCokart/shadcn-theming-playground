@@ -1,7 +1,8 @@
 import * as React from "react"
-import { Metadata } from "next"
 import Link from "next/link"
 import { Star } from "lucide-react"
+
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Home page",

@@ -1,7 +1,10 @@
 import Image from "next/image"
 import { ListMusic, PlusCircle } from "lucide-react"
 
+import type { Album } from "../data/albums"
+
 import { cn } from "@/lib/utils"
+
 import {
   ContextMenu,
   ContextMenuContent,
@@ -13,7 +16,6 @@ import {
   ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 
-import { Album } from "../data/albums"
 import { playlists } from "../data/playlists"
 
 interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {

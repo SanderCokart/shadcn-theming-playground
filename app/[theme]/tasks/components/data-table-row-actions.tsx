@@ -1,7 +1,8 @@
 "use client"
 
-import { Row } from "@tanstack/react-table"
 import { Copy, MoreHorizontal, Pen, Star, Tags, Trash } from "lucide-react"
+
+import type { Row } from "@tanstack/react-table"
 
 import { Button } from "@/components/ui/button"
 import {
