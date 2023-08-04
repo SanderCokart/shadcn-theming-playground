@@ -4,6 +4,9 @@ import { Star } from "lucide-react"
 
 import type { Metadata } from "next"
 
+import { Button } from "@/components/ui/button"
+import { Switch } from "@/components/ui/switch"
+
 export const metadata: Metadata = {
   title: "Home page",
   description: "Beautifully designed themes built for shadcn/ui",
@@ -12,6 +15,16 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <section className="container max-w-[80%] p-2 md:pb-10">
+      <div className="space-x-4">
+        <Button>Primary</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="destructive">Destructive</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="link">Link</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Switch />
+      </div>
+
       <h1 className="scroll-m-20 text-xl font-extrabold tracking-tight md:text-4xl lg:text-5xl">
         <p className="center py-4 text-center text-3xl md:py-8 md:text-8xl">
           Why so bland?

@@ -148,6 +148,7 @@ export function NotificationsForm() {
                   </div>
                   <FormControl>
                     <Switch
+                      disabled
                       checked={field.value}
                       onCheckedChange={field.onChange}
                     />
